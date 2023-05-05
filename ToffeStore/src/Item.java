@@ -33,4 +33,24 @@ public class Item {
         return name;
     }
 
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public void setItemID(String itemID) {
+        this.itemID = itemID;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
 }
