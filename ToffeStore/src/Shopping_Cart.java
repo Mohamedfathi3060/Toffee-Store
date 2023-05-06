@@ -28,10 +28,10 @@ public class Shopping_Cart {
         System.out.println("Item Not Available");
         return false;
     }
-    public  ArrayList getItems (){
+    public  ArrayList<Item> getItems (){
         return items;
     }
-    public ArrayList getItemsQuantity () {return itemsQuantity;}
+    public ArrayList<Integer> getItemsQuantity () {return itemsQuantity;}
 
     // checkOut in user
     /*public boolean chekOut(){
