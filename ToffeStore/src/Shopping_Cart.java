@@ -1,11 +1,23 @@
+import java.util.ArrayList;
+
 public class Shopping_Cart {
-    private String[] items;
+    private ArrayList<Item> items;
     private double totalPrice;
-    public boolean addItem(String item){
+    public double calculateTotal() {
+        double result = 0;
+        for (Item item:
+             items) {
+            result += item.getPrice();
+        }
+        return result;
+    }
+
+    public boolean addItem(Item item) {
+        if (item.isAvailable()){
+            items.add(item);
+            return true;
+        }
         return false;
     }
-    private double calculateTotal(){
-        return 0;
-    }
-    public void checkOut(){}
+
 }
