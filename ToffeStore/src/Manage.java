@@ -2,7 +2,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Manage implements User{
     private UserManagement UsersManagement;
-    //private ItemManagment ItemsManagment;
     public boolean CheckEmail(String email)
     {
         Pattern pattern = Pattern.compile("([A-Za-z0-9#!%$‘&+*–/=?^_`.{|}?~]+@([A-Za-z0-9])+\\.([A-Za-z0-9])+)"); // email format

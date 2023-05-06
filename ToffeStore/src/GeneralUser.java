@@ -116,37 +116,41 @@ public class GeneralUser implements User{
         Manager.add(user);
 
     }
-    public void login()
+    public User login()
     {
-        boolean LoginSuccessful = false;
+        int idcount = 0 ;
+        int passCount = 0 ;
         Scanner scanner = new Scanner(System.in);
-       while (!LoginSuccessful)
+       while (idcount < 3)
        {
            System.out.print("Enter your ID: ");
            String ID = scanner.nextLine();
-           for (int i = 0;i < Manager.logged.size();i++)
-           {
-               if(Objects.equals(ID, Manager.logged.get(i).getUserID()))
-               {
-                   while (true)
+           for (int i = 0;i < Manager.logged.size();i++) {
+               if(Objects.equals(ID, Manager.logged.get(i).getUserID())) {
+                   while (passCount < 3)
                    {
-
+                       passCount++;
                        System.out.print("Enter your password: ");
                        String password = scanner.nextLine();
                        if (Objects.equals(password, Manager.logged.get(i).getPassword())) {
                            System.out.println("login successful");
-                           LoginSuccessful = true;
-                           break;
+                           return Manager.logged.get(i);
                        }
-                       System.out.println("password don't match any account. please entre correct password.");
+                       System.out.println("password don't match any account..!");
                    }
+                   idcount = 4;
                    break;
                }
            }
-           if(!LoginSuccessful)
+
+           if(idcount<3)
            {
-               System.out.println("ID don't match any account. please entre correct ID.");
+               System.out.println("ID don't match any account....!");
+               idcount++;
            }
        }
+
+        return new GeneralUser() ;
+
     }
 }

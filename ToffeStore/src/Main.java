@@ -1,5 +1,5 @@
-//for classes
-/*
+/*for classes
+
 public => seen  y all classes
 default => class seen by only files in its same package
 
@@ -25,37 +25,44 @@ but use Integer and Double
 1-when you will not accept null value
 2-in list  or arrayList that accept only Objects
 
+if take object of parent or interface type
+we can access methods of child by using
+((child)objName).methodName();
+if(objName instanceof child) ((Student)objName).methodName(); more Safe
+
 
 */
 
+
+
 public class Main {
     public static void main(String[] args) {
-        Stock st = new Stock();
-        st.addItem(new Item("123" , "pepsi" , null , 1250.363 , true));
-        st.addItem(new Item("567" , "cola" , null , 25060 , true));
-        st.addItem(new Item("8910" , "chepsi" , null , 36520.5654 , true));
-        st.addItem(new Item("203040" , "loloa" , null , 45950 , true));
-        st.addItem(new Item("9999" , "dietFood" , null , 59620.32 , false));
+//        Stock st = new Stock();
+//        st.addItem(new Item("123" , "pepsi" , null , 1250.363 , true));
+//        st.addItem(new Item("567" , "cola" , null , 25060 , true));
+//        st.addItem(new Item("8910" , "chepsi" , null , 36520.5654 , true));
+//        st.addItem(new Item("203040" , "loloa" , null , 45950 , true));
+//        st.addItem(new Item("9999" , "dietFood" , null , 59620.32 , false));
+//
+//        ItemsManagement im = new ItemsManagement(st);
+//        im.viewItems();
+//        Shopping_Cart cart = new Shopping_Cart();
+//        Item item = st.getItem("123");
+//        Item item2 = st.getItem("567");
+//        Item item3 = st.getItem("8910");
+//        cart.addItem(item,10);
+//        cart.addItem(item2,5);
+//        cart.addItem(item3,5);
+//        System.out.println(cart.calculateTotal());
+//        Pay_Method payMethod = new Cash_Method();
+//        Order order = new Order(cart,"121",payMethod,"1st of Egypt");
+//        Order order2 = new Order(cart,"121",payMethod,"1st of Egypt");
+//        order.printOrderDetails();
+//        order2.printOrderDetails();
 
-        ItemsManagement im = new ItemsManagement(st);
-        im.viewItems();
-        Shopping_Cart cart = new Shopping_Cart();
-        Item item = st.getItem("123");
-        Item item2 = st.getItem("567");
-        Item item3 = st.getItem("8910");
-        cart.addItem(item,10);
-        cart.addItem(item2,5);
-        cart.addItem(item3,5);
-        System.out.println(cart.calculateTotal());
-        Pay_Method payMethod = new Cash_Method();
-        Order order = new Order(cart,"121",payMethod,"1st of Egypt");
-        Order order2 = new Order(cart,"121",payMethod,"1st of Egypt");
-        order.printOrderDetails();
-        order2.printOrderDetails();
-
-
-
-
+    StoreSystem x = new StoreSystem();
+    x.mainManu();
+    x.mainManu();
 
 
 
