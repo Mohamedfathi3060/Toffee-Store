@@ -39,6 +39,19 @@ public class Main {
 
         ItemsManagement im = new ItemsManagement(st);
         im.viewItems();
+        Shopping_Cart cart = new Shopping_Cart();
+        Item item = st.getItem("123");
+        Item item2 = st.getItem("567");
+        Item item3 = st.getItem("8910");
+        cart.addItem(item,10);
+        cart.addItem(item2,5);
+        cart.addItem(item3,5);
+        System.out.println(cart.calculateTotal());
+        Pay_Method payMethod = new Cash_Method();
+        Order order = new Order(cart,"121",payMethod,"1st of Egypt");
+        Order order2 = new Order(cart,"121",payMethod,"1st of Egypt");
+        order.printOrderDetails();
+        order2.printOrderDetails();
 
 
 
