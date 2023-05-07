@@ -1,9 +1,8 @@
 import java.util.Objects;
 import java.util.Scanner;
 public class GeneralUser implements User{
-    UserManagement Manager = new UserManagement();
-    public void register()
-    {
+//    UserManagement Manager = new UserManagement();
+    public void register( UserManagement Manager) {
         Manage manage = new Manage();
         LoggedInUser user = new LoggedInUser();
         Scanner scanner = new Scanner(System.in);
@@ -12,8 +11,7 @@ public class GeneralUser implements User{
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
         user.SetUserName(name);
-        while (true)
-        {
+        while (true) {
             boolean flag = true;
             System.out.print("Enter your ID: ");
             String ID = scanner.nextLine();
@@ -26,7 +24,7 @@ public class GeneralUser implements User{
                     String s = scanner.nextLine();
                     if( Objects.equals(s.toLowerCase(), "yes"))
                     {
-                        login();
+                        login(Manager);
                         return;
 
                     }
@@ -42,11 +40,12 @@ public class GeneralUser implements User{
                 break;
             }
         }
+
         System.out.print("Enter your Address: ");
         String address = scanner.nextLine();
         user.SetAddress(address);
-        while (true)
-        {
+
+        while (true) {
             boolean flag = true;
             System.out.print("Enter your Phone Number: ");
             String phone= scanner.nextLine();
@@ -73,8 +72,8 @@ public class GeneralUser implements User{
                 System.out.println("invalid input.Please enter correct number.");
             }
         }
-        while (true)
-        {
+
+        while (true) {
             boolean flag = true;
             System.out.print("Enter your Email: ");
             String email= scanner.nextLine();
@@ -101,8 +100,7 @@ public class GeneralUser implements User{
             }
         }
 
-        while (true)
-        {
+        while (true) {
 
             System.out.print("Enter your password: ");
             String pass= scanner.nextLine();
@@ -113,11 +111,11 @@ public class GeneralUser implements User{
                 break;
             }
         }
+
         Manager.add(user);
 
     }
-    public User login()
-    {
+    public User login(UserManagement Manager) {
         int idcount = 0 ;
         int passCount = 0 ;
         Scanner scanner = new Scanner(System.in);
@@ -150,7 +148,7 @@ public class GeneralUser implements User{
            }
        }
 
-        return new GeneralUser() ;
+        return this ;
 
     }
 }

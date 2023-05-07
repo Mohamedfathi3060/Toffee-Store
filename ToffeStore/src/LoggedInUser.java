@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Scanner;
 public class LoggedInUser implements User {
     private String UserID;
@@ -38,7 +39,9 @@ public class LoggedInUser implements User {
     {
         Email = mail;
     }
-
+    public String getUserName() {
+        return UserName;
+    }
     public String getUserID()
     {
         return UserID;
@@ -56,7 +59,7 @@ public class LoggedInUser implements User {
         return PhoneNumber;
     }
     public boolean addItem (Item item, int quantity) {
-        return  Cart.addItem(item,quantity) ? true : false;
+        return  Cart.addItem(item,quantity);
     }
     public void printPrevOrders (){
         if (Orders.isEmpty()){
@@ -65,18 +68,23 @@ public class LoggedInUser implements User {
         else {
             for (int i = 0; i < Orders.size(); i++){
                 Orders.get(i).printOrderDetails();
+                System.out.println();
             }
         }
     }
     public boolean checkOut (){
         Scanner input = new Scanner(System.in);
         System.out.println("Choose Pay Method to Continue: ");
-        System.out.println("1-Cash ");
+        System.out.println("1- Cash on delivery ");
+        System.out.println("2- PayPal         (not available) ");
+        System.out.println("3- E-Wallet       (not available) ");
+        System.out.println("4- Loyalty Points (not available) ");
         String ans = input.nextLine();
-        if (ans == "1" || ans.toLowerCase(Locale.ROOT) == "cash") {
+        if (Objects.equals(ans, "1") || ans.equalsIgnoreCase("cash")) {
             Pay_Method payMethod = new Cash_Method();
             Order order = new Order(Cart, UserID, payMethod,Address);
             Orders.add(order);
+             Cart = new Shopping_Cart() ;
             return true;
         }
         else {
@@ -102,6 +110,9 @@ public class LoggedInUser implements User {
             }
         }
         return false;
+    }
+    public boolean isCartEmpty(){
+        return Cart.getItems().isEmpty();
     }
 
 }

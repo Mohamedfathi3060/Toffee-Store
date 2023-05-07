@@ -11,14 +11,12 @@ public class Stock {
     Stock(){
         items = new ArrayList<>();
         loadFromFile();
-
     }
     void addItem(Item it){
         items.add(it);
     }
     void loadFromFile(){
         try{
-
             final String path = "items.csv";
             BufferedReader b  = new BufferedReader(new FileReader(path));
             String line ;
@@ -30,15 +28,17 @@ public class Stock {
             b.close();
         }
         catch (FileNotFoundException e){
-            System.out.println("here");
+            System.out.println("file not found");
             e.printStackTrace();
         }
         catch (IOException e){
+            System.out.println("input Output exception");
+
             e.printStackTrace();
         }
 
     }
-    Item getItem(String ID){
+    Item getItemById(String ID){
         for (Item item : items) {
             if (Objects.equals(item.getItemID(), ID)) {
                 return item;
@@ -46,10 +46,16 @@ public class Stock {
         }
         return null ;
     }
-    Item getItem(int index){
-        if(index > 0 && index <items.size()) return items.get(index);
-        else return null;
+
+    Item getItemByName(String NAME){
+        for (Item item : items) {
+            if (Objects.equals(item.getName(), NAME)) {
+                return item;
+            }
+        }
+        return null ;
     }
+
 
 
 }

@@ -17,10 +17,10 @@ public class Order {
         this.orderID = lastOrderID + 1;
         lastOrderID++;
         payMethod.Redeem();
-        System.out.println("Order " + orderID + " Taken Successfully");
+        System.out.println("Order " + orderID + " will arrive within 2 working days");
     }
     public void printOrderDetails() {
-        System.out.println("Items: ");
+        System.out.println("OrderID: " + orderID);
         for (int i = 0; i < Cart.getItems().size(); i++){
             System.out.println("Item Name: " + Cart.getItems().get(i).getName() + " Quantity: " + Cart.getItemsQuantity().get(i)
                                 + " Price: " + Math.round(Cart.getItemsQuantity().get(i) * Cart.getItems().get(i).getPrice() * 100.0)/100.0);
@@ -29,15 +29,14 @@ public class Order {
         System.out.println("UserID: " + userID);
         System.out.println("PaymentMethod: " + payMethod.getMethodName());
         System.out.println("Address: " + Address);
-        System.out.println("OrderID: " + orderID);
     }
     public int getOrderID () {
         return orderID;
     }
-    public ArrayList getItems () {
-        return Cart.getItems();
-    }
-    public ArrayList getItemsQuantity () {
-        return Cart.getItemsQuantity();
-    }
+//    public ArrayList<Item> getItems () {
+//        return Cart.getItems();
+//    }
+//    public ArrayList<Integer> getItemsQuantity () {
+//        return Cart.getItemsQuantity();
+//    }
 }
