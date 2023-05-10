@@ -15,6 +15,7 @@ public class Shopping_Cart {
         for (int i = 0; i < items.size(); i++){
             result += items.get(i).getPrice() * itemsQuantity.get(i);
         }
+        // to restrict the result to two digit after the fraction mark
         result = Math.round(result*100.0)/100.0;
         return result;
     }

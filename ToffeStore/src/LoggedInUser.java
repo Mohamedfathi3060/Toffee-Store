@@ -84,7 +84,7 @@ public class LoggedInUser implements User {
             Pay_Method payMethod = new Cash_Method();
             Order order = new Order(Cart, UserID, payMethod,Address);
             Orders.add(order);
-             Cart = new Shopping_Cart() ;
+            Cart = new Shopping_Cart() ;
             return true;
         }
         else {
