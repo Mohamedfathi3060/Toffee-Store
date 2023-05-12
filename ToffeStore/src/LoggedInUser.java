@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -133,7 +132,7 @@ public class LoggedInUser implements User {
                 System.out.println("Choose Pay Method to Continue: ");
                 System.out.println("1-Cash ");
                 String ans = input.nextLine();
-                if (ans == "1" || ans.toLowerCase(Locale.ROOT) == "cash") {
+                if (Objects.equals(ans, "1") || ans.equalsIgnoreCase("cash")) {
                     Order order = Orders.get(i);
                     Orders.add(order);
                     return true;
