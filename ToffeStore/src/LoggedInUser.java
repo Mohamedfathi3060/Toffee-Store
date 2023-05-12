@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Scanner;
+
+/**
+ * Class That Holds Logged-in User Information
+ */
 public class LoggedInUser implements User {
     private String UserID;
     private String UserName;
@@ -11,6 +15,10 @@ public class LoggedInUser implements User {
     private String Email;
     private Shopping_Cart Cart;
     private ArrayList<Order> Orders;
+
+    /**
+     * Assigns Memory Space to User Cart and Orders List
+     */
     public LoggedInUser (){
         Cart = new Shopping_Cart();
         Orders = new ArrayList<>();
