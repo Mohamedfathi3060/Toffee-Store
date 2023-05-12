@@ -8,6 +8,8 @@ public class Order {
     private double totalPrice;
     private Pay_Method payMethod;
     private String Address;
+
+    // construct an order object with the items in specific cart and a user information
     public Order(Shopping_Cart cart, String userID, Pay_Method payMethod, String Address){
         this.Cart = cart;
         this.totalPrice = cart.calculateTotal();
@@ -19,6 +21,7 @@ public class Order {
         payMethod.Redeem();
         System.out.println("Order " + orderID + " will arrive within 2 working days");
     }
+    // prints order information
     public void printOrderDetails() {
         System.out.println("OrderID: " + orderID);
         for (int i = 0; i < Cart.getItems().size(); i++){
@@ -30,13 +33,8 @@ public class Order {
         System.out.println("PaymentMethod: " + payMethod.getMethodName());
         System.out.println("Address: " + Address);
     }
+    // returns order id
     public int getOrderID () {
         return orderID;
     }
-//    public ArrayList<Item> getItems () {
-//        return Cart.getItems();
-//    }
-//    public ArrayList<Integer> getItemsQuantity () {
-//        return Cart.getItemsQuantity();
-//    }
 }
