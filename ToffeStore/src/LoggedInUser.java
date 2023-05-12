@@ -61,6 +61,7 @@ public class LoggedInUser implements User {
     public boolean addItem (Item item, int quantity) {
         return  Cart.addItem(item,quantity);
     }
+    // prints all the orders registered in user orders list
     public void printPrevOrders (){
         if (Orders.isEmpty()){
             System.out.println("No Previous Orders");
@@ -72,6 +73,7 @@ public class LoggedInUser implements User {
             }
         }
     }
+    // making an order with the items in the user cart and by the payment method he chooses
     public boolean checkOut (){
         Scanner input = new Scanner(System.in);
         System.out.println("Choose Pay Method to Continue: ");
@@ -79,11 +81,15 @@ public class LoggedInUser implements User {
         System.out.println("2- PayPal         (not available) ");
         System.out.println("3- E-Wallet       (not available) ");
         System.out.println("4- Loyalty Points (not available) ");
+        // take the payment method number
         String ans = input.nextLine();
         if (Objects.equals(ans, "1") || ans.equalsIgnoreCase("cash")) {
+            // create payment method object
             Pay_Method payMethod = new Cash_Method();
+            // create order object
             Order order = new Order(Cart, UserID, payMethod,Address);
             Orders.add(order);
+            // clear the shopping cart
             Cart = new Shopping_Cart() ;
             return true;
         }
