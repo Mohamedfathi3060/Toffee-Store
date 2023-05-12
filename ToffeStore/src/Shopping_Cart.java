@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * Shopping Cart Class That Holds The Items User Wants to Buy
+ * @author AbdelrahmanMohamed
  */
 public class Shopping_Cart {
     private ArrayList<Item> items;

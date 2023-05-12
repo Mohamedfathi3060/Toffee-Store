@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * Class That Holds Logged-in User Information
+ * @author AbdelrahmanMohamed
  */
 public class LoggedInUser implements User {
     private String UserID;
