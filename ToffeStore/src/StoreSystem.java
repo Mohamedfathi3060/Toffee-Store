@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -6,7 +7,7 @@ public class StoreSystem {
     private ItemsManagement resources;
     private UserManagement users;
     private boolean state;
-    StoreSystem(){
+    StoreSystem() throws IOException {
         currentUser = new GeneralUser();
         resources = new ItemsManagement();
         users = new UserManagement();

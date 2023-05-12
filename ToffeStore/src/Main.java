@@ -34,9 +34,10 @@ if(objName instanceof child) ((Student)objName).methodName(); more Safe
 */
 
 
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
     StoreSystem x = new StoreSystem();
     x.start();
     }

@@ -22,6 +22,7 @@ public class Shopping_Cart {
         return totalPrice;
     }
     // add item with specific quantity to the cart
+
     public boolean addItem(Item item, int quantity) {
         if (item.isAvailable()){
             items.add(item);
