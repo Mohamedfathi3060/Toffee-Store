@@ -1,7 +1,16 @@
 import java.util.Objects;
 import java.util.Scanner;
+
+/**
+ * Class That Manages Registering and Logging-in Users
+ */
 public class GeneralUser implements User{
 //    UserManagement Manager = new UserManagement();
+
+    /**
+     * Allows the New User to Register Account to the System
+     * @param Manager That Controls Users' Data
+     */
     public void register( UserManagement Manager) {
         Manage manage = new Manage();
         LoggedInUser user = new LoggedInUser();
@@ -115,6 +124,10 @@ public class GeneralUser implements User{
         Manager.add(user);
 
     }
+    /**
+     * Allows the User to Log in to His Account to Use the System
+     * @param Manager That Controls Users' Data
+     */
     public User login(UserManagement Manager) {
         int idcount = 0 ;
         int passCount = 0 ;

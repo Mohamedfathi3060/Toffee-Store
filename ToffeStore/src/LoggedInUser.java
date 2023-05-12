@@ -23,45 +23,91 @@ public class LoggedInUser implements User {
         Cart = new Shopping_Cart();
         Orders = new ArrayList<>();
     }
+
+    /**
+     * Sets User ID to the Given ID
+     * @param ID is the Entered ID
+     */
     public void SetUserID(String ID)
     {
         UserID = ID;
     }
+    /**
+     * Sets UserName to the Given Name
+     * @param Name is the Entered Name
+     */
     public void SetUserName(String Name)
     {
         UserName = Name;
     }
+    /**
+     * Sets User Password to the Given Password
+     * @param Pass is the Entered Password
+     */
     public void SetPassword(String Pass)
     {
         Password = Pass;
     }
+    /**
+     * Sets User Address to the Given Address
+     * @param address is the Entered Address
+     */
     public void SetAddress(String address)
     {
         Address = address;
     }
+    /**
+     * Sets User Phone Number to the Given Phone Number
+     * @param Number is the Entered Phone Number
+     */
     public void SetPhoneNumber(String Number)
     {
         PhoneNumber = Number;
     }
+    /**
+     * Sets User Email to the Given Email
+     * @param mail is the Entered Email
+     */
     public void SetEmail(String mail)
     {
         Email = mail;
     }
+
+    /**
+     * Returns The UserName
+     * @return UserName
+     */
     public String getUserName() {
         return UserName;
     }
+    /**
+     * Returns The UserID
+     * @return UserID
+     */
     public String getUserID()
     {
         return UserID;
     }
+    /**
+     * Returns The UserPassword
+     * @return UserPassword
+     */
     public String getPassword()
     {
         return Password;
     }
+    /**
+     * Returns The User Email
+     * @return User Email
+     */
     public String getEmail()
     {
         return Email;
     }
+    /**
+     * Returns The User Phone Number
+     * @return Phone Number
+     */
     public String getPhoneNumber()
     {
         return PhoneNumber;
