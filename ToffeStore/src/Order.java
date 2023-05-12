@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/**
+ * Order Class that Holds All The Order's Information to be Used When that Wanted
+ */
+
 public class Order {
     private Shopping_Cart Cart;
     private  static int lastOrderID = 0;
@@ -9,7 +13,13 @@ public class Order {
     private Pay_Method payMethod;
     private String Address;
 
-    // construct an order object with the items in specific cart and a user information
+    /**
+     * Constructs an Order Object with the Items in User's Cart and a User's Information
+     * @param cart User's Cart
+     * @param userID ID of the Use Wants to Make this Order
+     * @param payMethod Payment Method
+     * @param Address Address of the Use Wants to Make this Order
+     */
     public Order(Shopping_Cart cart, String userID, Pay_Method payMethod, String Address){
         this.Cart = cart;
         this.totalPrice = cart.calculateTotal();
@@ -21,7 +31,10 @@ public class Order {
         payMethod.Redeem();
         System.out.println("Order " + orderID + " will arrive within 2 working days");
     }
-    // prints order information
+
+    /**
+     * Prints Order's Information
+     */
     public void printOrderDetails() {
         System.out.println("OrderID: " + orderID);
         for (int i = 0; i < Cart.getItems().size(); i++){
@@ -33,7 +46,11 @@ public class Order {
         System.out.println("PaymentMethod: " + payMethod.getMethodName());
         System.out.println("Address: " + Address);
     }
-    // returns order id
+
+    /**
+     * Returns Order's ID to be Used in Checkout Previous Orders
+     * @return Order's ID
+     */
     public int getOrderID () {
         return orderID;
     }

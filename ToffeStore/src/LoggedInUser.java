@@ -58,10 +58,20 @@ public class LoggedInUser implements User {
     {
         return PhoneNumber;
     }
+
+    /**
+     * Adds Specific Item to User's Cart
+     * @param item Item Object User Wants to Add to His Cart
+     * @param quantity The Quantity of The Item He Wants to Buy
+     * @return True if Item is Available False Either
+     */
     public boolean addItem (Item item, int quantity) {
         return  Cart.addItem(item,quantity);
     }
-    // prints all the orders registered in user orders list
+
+    /**
+     * Prints All User's Previous Orders
+     */
     public void printPrevOrders (){
         if (Orders.isEmpty()){
             System.out.println("No Previous Orders");
@@ -73,7 +83,11 @@ public class LoggedInUser implements User {
             }
         }
     }
-    // making an order with the items in the user cart and by the payment method he chooses
+
+    /**
+     * Creates an Order Object with the Items in the User's Shopping Cart
+     * @return True if He Chooses Cash Method False Either because They are not Available
+     */
     public boolean checkOut (){
         Scanner input = new Scanner(System.in);
         System.out.println("Choose Pay Method to Continue: ");
@@ -98,6 +112,12 @@ public class LoggedInUser implements User {
         }
         return false;
     }
+
+    /**
+     * Add a Previous Order to User's Orders List and Check it Out
+     * @param ID OrderID User Wants to Re-Order
+     * @return True if He Chooses Cash Method False Either because They are not Available
+     */
     public boolean checkOutPrevOrder (int ID){
         for (int i = 0; i < Orders.size(); i++){
             if (Orders.get(i).getOrderID() == ID){
@@ -117,6 +137,11 @@ public class LoggedInUser implements User {
         }
         return false;
     }
+
+    /**
+     * Checks if the Cart is Empty or Not
+     * @return True if User's Cart is Empty (Doesn't Have Items False Either
+     */
     public boolean isCartEmpty(){
         return Cart.getItems().isEmpty();
     }
