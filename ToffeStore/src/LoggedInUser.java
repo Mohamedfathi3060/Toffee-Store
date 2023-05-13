@@ -13,14 +13,14 @@ public class LoggedInUser implements User {
     private String Address;
     private String PhoneNumber;
     private String Email;
-    private Shopping_Cart Cart;
+    private ShoppingCart Cart;
     private ArrayList<Order> Orders;
 
     /**
      * Assigns Memory Space to User Cart and Orders List
      */
     public LoggedInUser (){
-        Cart = new Shopping_Cart();
+        Cart = new ShoppingCart();
         Orders = new ArrayList<>();
     }
 
@@ -153,12 +153,12 @@ public class LoggedInUser implements User {
         String ans = input.nextLine();
         if (Objects.equals(ans, "1") || ans.equalsIgnoreCase("cash")) {
             // create payment method object
-            Pay_Method payMethod = new Cash_Method();
+            PayMethod payMethod = new Cash_Method();
             // create order object
             Order order = new Order(Cart, UserID, payMethod,Address);
             Orders.add(order);
             // clear the shopping cart
-            Cart = new Shopping_Cart() ;
+            Cart = new ShoppingCart() ;
             return true;
         }
         else {

@@ -1,12 +1,10 @@
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
 
 /**
  * Shopping Cart Class That Holds The Items User Wants to Buy
  * @author AbdelrahmanMohamed
  */
-public class Shopping_Cart {
+public class ShoppingCart {
     private ArrayList<Item> items;
     private ArrayList<Integer> itemsQuantity;
     private double totalPrice;
@@ -14,7 +12,7 @@ public class Shopping_Cart {
     /**
      * Assigns Memory Space to the Items and itemsQuantity List
      */
-    public Shopping_Cart () {
+    public ShoppingCart() {
         items = new ArrayList<>();
         itemsQuantity = new ArrayList<>();
         totalPrice = 0;

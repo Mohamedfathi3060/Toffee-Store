@@ -2,7 +2,7 @@
  * Cash Method Class That Acts in Its Own Way While Checking Out
  * @author AbdelrahmanMohamed
  */
-public class Cash_Method implements Pay_Method {
+public class Cash_Method implements PayMethod {
     /**
      * Cash Method Behaviour
      */

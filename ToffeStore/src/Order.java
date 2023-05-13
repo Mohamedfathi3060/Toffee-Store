@@ -1,17 +1,15 @@
-import java.util.ArrayList;
-
 /**
  * Order Class that Holds All The Order's Information to be Used When that Wanted
  * @author AbdelrahmanMohamed
  */
 
 public class Order {
-    private Shopping_Cart Cart;
+    private ShoppingCart Cart;
     private  static int lastOrderID = 0;
     private  int orderID;
     private String userID;
     private double totalPrice;
-    private Pay_Method payMethod;
+    private PayMethod payMethod;
     private String Address;
 
     /**
@@ -21,7 +19,7 @@ public class Order {
      * @param payMethod Payment Method
      * @param Address Address of the Use Wants to Make this Order
      */
-    public Order(Shopping_Cart cart, String userID, Pay_Method payMethod, String Address){
+    public Order(ShoppingCart cart, String userID, PayMethod payMethod, String Address){
         this.Cart = cart;
         this.totalPrice = cart.calculateTotal();
         this.userID = userID;

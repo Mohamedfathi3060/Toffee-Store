@@ -2,7 +2,7 @@
  * an Interface to All Payment Methods
  * @author AbdelrahmanMohamed
  */
-public interface Pay_Method {
+public interface PayMethod {
     /**
      * Abstract Functions
      */
