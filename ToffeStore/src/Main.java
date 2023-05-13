@@ -3,8 +3,8 @@
 public => seen  y all classes
 default => class seen by only files in its same package
 
-final    => class can be a super class {not allowed to br inhertidet}
-abstract => The class cannot be used to create objects { it may has impl. for some methods}
+final    => class can be a super class {not allowed to br incertitude}
+abstract => The class cannot be used to create objects { it may have impl. for some methods}
 
 
 For attributes and methods, you can use the one of the following:
@@ -20,12 +20,12 @@ volatile	The value of an attribute is not cached thread-locally, and is always r
 diff between int and Integer
 and double and Double
 
-int and double is primative data types which is good for performance
+int and double is primitive data types which is good for performance
 but use Integer and Double
 1-when you will not accept null value
 2-in list  or arrayList that accept only Objects
 
-if take object of parent or interface type
+if you take object of parent or interface type
 we can access methods of child by using
 ((child)objName).methodName();
 if(objName instanceof child) ((Student)objName).methodName(); more Safe

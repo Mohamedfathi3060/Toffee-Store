@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 /**
  * This class represents a stock of items.
- *
  * @author mohamed Fathi
  */
 public class Stock {

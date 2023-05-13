@@ -103,7 +103,7 @@ public class Manage implements User {
             return false;
         }
 
-        // Return true if all of the checks passed.
+        // Return true if all  the checks passed.
         return true;
     }
 

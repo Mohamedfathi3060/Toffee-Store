@@ -1,5 +1,6 @@
 /**
  * This class represents an item in a toffee Store.
+ *@author Mohamed Ftahi
  */
 public class Item {
     /**

@@ -2,7 +2,7 @@ import java.io.IOException;
 
 /**
  * This class represents a management system for items.
- *
+ * @author Mohamed Ftahi
  */
 public class ItemsManagement {
     /**
