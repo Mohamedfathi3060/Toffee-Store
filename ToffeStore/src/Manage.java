@@ -1,16 +1,19 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/**
- * This class implements the `User` interface.
- *
- * @author moaz
- */
-public class Manage implements User {
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
+import javax.mail.Session;
+import javax.mail.Transport;
+import java.util.Random;
 
-    /**
-     * The user management system that this class is associated with.
-     */
-    private UserManagement UsersManagement;
+
+/**
+ *
+ * @author moaaz
+ */
+public class Manage {
 
     /**
      * Checks if the given email address is valid.
@@ -24,9 +27,73 @@ public class Manage implements User {
 
         // Create a matcher object for the given email address.
         Matcher match = pattern.matcher(email);
+        if(!match.find()){
+            System.out.println("invalid input.Please enter correct email.\n");
+            return false ;
+        }
 
-        // Return true if the email address matches the regular expression pattern.
-        return match.find();
+        String code = new String();
+        Random rand = new Random();
+        for (int i = 0 ; i<6 ; i++){
+            Integer n = rand.nextInt(10);
+
+            code += n.toString();
+        }
+
+        final String sender  = "mohamedfathi11119@gmail.com";
+        String recipient = email ;
+        String host = "127.0.0.1";
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "465");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.socketFactory.port", "465");
+        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
+        Session session = Session.getInstance(properties,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(sender, "hegdiltnilrfwkgi");
+                    }
+                });
+
+        try
+        {
+            // MimeMessage object.
+            MimeMessage message = new MimeMessage(session);
+
+            // Set From Field: adding senders email to from field.
+            message.setFrom(new InternetAddress(sender));
+
+            // Set To Field: adding recipient's email to from field.
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+
+            // Set Subject: subject of the email
+            message.setSubject("Toffee Store one-time password OTP");
+
+
+            // set body of the email.
+            message.setText("your OTP code is: " +code);
+
+            // Send email.
+            Transport.send(message);
+        }
+        catch (MessagingException mex)
+        {
+            System.out.println("invalid input.Please enter correct email.\n");
+            return false ;
+        }
+
+    System.out.print("Enter OTP you received: ");
+    Scanner input = new Scanner(System.in);
+    String hisCode = input.nextLine();
+    if(! hisCode.equals(code)){
+        System.out.println("invalid OTP number\n");
+        return false;
+    }
+    return true;
+
+
     }
 
     /**

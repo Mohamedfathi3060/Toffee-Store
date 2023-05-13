@@ -103,10 +103,7 @@ public class GeneralUser implements User{
                 user.SetEmail(email);
                 break;
             }
-            else
-            {
-                System.out.println("invalid input.Please enter correct email.");
-            }
+
         }
 
         while (true) {
